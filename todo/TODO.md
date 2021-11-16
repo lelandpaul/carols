@@ -3,7 +3,6 @@
 ## New Carols
 
 ### To add
-* [The Infant King](https://www.cpdl.org/wiki/images/e/e3/SIng_Lullaby_-_Full_Score.pdf)
 * [Infant Holy, Infant Lowly](https://hymnary.org/hymn/HTLG2017/page/102)
 * [Still, Still, Still](http://www.cantatedomino.org/cd/still,-still,-still.---salzburg-melody--arr-mather-.php) (NB: arrangement needs vetting)
 
