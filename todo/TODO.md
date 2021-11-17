@@ -23,6 +23,7 @@
 * Ma'oz Tzur: hebrew?
 * [What Child Is This: adtl text](https://www.hymnsandcarolsofchristmas.com/Hymns_and_Carols/what_child_is_this_version_1.htm)
 * Can "JC the Apple Tree" be one page?
+* can i write in descants??
 
 ## Chopping block
 * what child is this
