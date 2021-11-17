@@ -26,14 +26,7 @@
 * can i write in descants??
 
 ## Chopping block
-* what child is this
 * adam lay ybounden
-* Gloucestershire Wassail
-* holly and the ivy
 * midnight clear - sullivan
 * jesus christ the apple tree
-* noel nouvelet
-* o magnum lol why is this in there
-* see amid
-* sussex
 * virgin unspotted lol
