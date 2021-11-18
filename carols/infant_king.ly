@@ -23,14 +23,15 @@ sop = \context Voice = "sop" {
   \relative c' {
     \voiceOne
     f8 g e f4. |
-    g8 a bes c4 d8 | c4 bes8 a8( g) a | \break
+    g8 a bes c4 d8 | c4 bes8 a8( g) a |
     f g e f4. |
 
     % Hush, do not wake...
     bes8 a bes g4 c8 | b( c) d c4. |
     c8 d e f4 c8 | d4 bes8 c4 a8 |
-    c bes a g4 a8 | \break f( g) a g4. |
-    c,4. f ~ f8 g e f4. \bar".||"
+    c bes a g4 a8 |
+    \time 9/8 \break f( g) a g4. c,4. |
+    f ~ f8 g e f4. \bar".||"
   }
 }
 
@@ -44,8 +45,9 @@ alto=\context Voice = "alto"   {
     % Hush, do not wake...
     f8 e f e4 g8 | f4 f8 e4. |
     f8 f g f4 f8 | f4 g8 e4 f8 |
-    g8 g f e4 e8 | d4 e8 d4. |
-    g, r | c8 d c c4. \bar".||"
+    g8 g f e4 e8 |
+    \time 9/8 d4 e8 d4. c |
+    r c8 d c c4. \bar".||"
 
   }
 }
@@ -60,8 +62,9 @@ tenor = \context Voice = "tenor"   {
     % Hush, do not wake...
     bes8 c d c4 c8 | d( c) b c4. |
     c8 bes bes c4 c8 | bes4 d8 c4 c8 |
-    c8 c c c4 a8 | a4 a8 bes4. |
-    e, s | c'8 bes g a4. \bar".||"
+    c8 c c c4 a8 |
+    \time 9/8 a4 a8 bes4. g |
+    s c8 bes g a4. \bar".||"
   }
 
 }
@@ -76,15 +79,17 @@ bass = \context Voice = "bass"   {
     % Hush, do not wake...
     d8 c bes c4 e8 | d4 g8 c,8( c' bes!) |
     a bes g a4 a8 | bes4 g8 a4 f8 |
-    e e f c4 c8 | d4 c8 bes4. |
-    e r | a,8 bes c <<c4. f,4.>>  \bar".||"
+    e e f c4 c8 |
+    \time 9/8 d4 c8 bes4. e |
+    d\rest a8 bes c <<c4. f,4.>>  \bar".||"
   }
 }
 accomp=\chordmode {
 
 }
 stanzaa = \lyricmode {
-  Sing lul -- la -- by!
+  \repeat unfold 4 { \skip 1 }
+  \set stanza = "1."
   Lul -- la -- by ba -- by,
   now re -- clin -- ing,
   Sing lul -- la -- by!
@@ -95,11 +100,11 @@ stanzaa = \lyricmode {
   stars are shin -- ing
   O -- ver the place where
   He is ly -- ing:
-  Sing lul -- la -- by!
 }
 
 stanzab = \lyricmode {
   Sing lul -- la -- by!
+  \set stanza = "2."
   Lul -- la -- by ba -- by,
   now a -- sleep -- ing,
   Sing lul -- la -- by!
@@ -112,22 +117,28 @@ stanzab = \lyricmode {
   grief and weep -- ing:
   Sing lul -- la -- by!
 }
-stanzac = \lyricmode {
-  Sing lul -- la -- by!
-  Lul -- la -- by ba -- by,
-  now a -- doz -- ing,
-  Sing lul -- la -- by!
 
-  Hush, do not wake the
-  In -- fant King.
-  Soon comes the cross,
-  the nails, the pierc -- ing,
-  Then in the grave
-  at last re -- pos -- ing:
-  Sing lul -- la -- by!
-}
+% removed for length reasons
+% and also it's kind of yikes
+% stanzac = \lyricmode {
+%   Sing lul -- la -- by!
+%   Lul -- la -- by ba -- by,
+%   now a -- doz -- ing,
+%   Sing lul -- la -- by!
+
+%   Hush, do not wake the
+%   In -- fant King.
+%   Soon comes the cross,
+%   the nails, the pierc -- ing,
+%   Then in the grave
+%   at last re -- pos -- ing:
+%   Sing lul -- la -- by!
+% }
+
+
 stanzad = \lyricmode {
-  Sing lul -- la -- by!
+  \repeat unfold 4 { \skip 1 }
+  \set stanza = "3."
   Lul -- la -- by! is the
   babe a -- wak -- ing?
   Sing lul -- la -- by!
@@ -135,10 +146,10 @@ stanzad = \lyricmode {
   Hush, do not stir the
   In -- fant King.
   Dream -- ing of East -- er,
-  glad -- some morn -- ing.
+  glad -- some morn -- ing;
   Con -- quer -- ing Death, its
   bond -- age break -- ing:
-  Sing lul -- la -- by!
+
 }
 stanzae = \lyricmode {
 
@@ -170,16 +181,12 @@ wordsTop = \lyricmode {
     } { \wordsTop }
 
     \lyricsto "alto" \context Lyrics = "stanza-1" {
-      \set stanza = "1."
       \stanzaa }
     \lyricsto "alto" \context Lyrics = "stanza-2" {
-      \set stanza = "2."
       \stanzab }
-    \lyricsto "alto" \context Lyrics = "stanza-3" {
-      \set stanza = "3."
-      \stanzac }
+    % \lyricsto "alto" \context Lyrics = "stanza-3" {
+    %   \stanzac }
   	\lyricsto "alto" \context Lyrics = "stanza-4" {
-  		\set stanza = "4."
   			\stanzad }
                                 %	\lyricsto "sop" \context Lyrics = "stanza-5" {
                                 %		\set stanza = "5."
