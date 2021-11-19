@@ -3,11 +3,10 @@
 
 \header {
   title = "What Child is This?"
-  %subtitle = "Greensleeves"
+  toc_as = "What Child is This? (Greensleeves)"
   poet = "William Chatterton Dix (1837 - 1898)"
   composer = "Trad. English Melody"
   meter = "Greensleeves 8.7.8.7 with Refrain"
-  %instrument = "SATB Choral"
   copyright = "Public Domain"
   index_as = "Greensleeves"
 }
@@ -30,7 +29,7 @@ verseI= \lyricmode {
                                 %refrain
   This, this is Christ the King,
   Whom shep -- herds guard and an -- gels sing;
-  Haste, haste to bring Him laud
+  Haste, haste to bring Him laud,
   The Babe, the Son of Ma -- ry.
 }
 
@@ -38,7 +37,7 @@ verseII= \lyricmode {
   \set stanza = "2."
   Why lies He in such mean e -- state
   Where ox and ass are feed -- ing?
-  Good Chris -- tian, fear: for sin -- ners here
+  Good Chris -- tians, fear: for sin -- ners here
   The si -- lent Word is plead -- ing.
 }
 

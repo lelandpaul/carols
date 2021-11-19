@@ -14,9 +14,7 @@
 * [Legend/Crown of Roses (Tchaikovsky)](https://www.cpdl.org/wiki/images/3/33/Tcha-leg.pdf)
 
 ## Tweaks
-* [In Dulci: better translation](https://hymnary.org/text/in_dulci_jubilo_let_us_our_homage_show)
 * Ma'oz Tzur: hebrew?
-* [What Child Is This: adtl text](https://www.hymnsandcarolsofchristmas.com/Hymns_and_Carols/what_child_is_this_version_1.htm)
 * Can "JC the Apple Tree" be one page?
 * can i write in descants??
 
