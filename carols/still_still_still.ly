@@ -71,9 +71,8 @@ bass = \context Voice = "bass"   {
     d2 a | b a4( a') |
     g4 fis e a, | d2. d4 |
 
-    \repeat unfold 2 {
-      a a a a | d a fis a |
-    }
+    a a a a | d a fis d' |
+    a a a a | d a fis a |
 
     d2 a | b a4( a') |
     g4 fis e a, | d1 \bar "|."
@@ -82,20 +81,20 @@ bass = \context Voice = "bass"   {
 
 stanzaa = \lyricmode {
   Still, still, still,
-  weil's Kind -- lein schla -- fen will.
+  weil's Kind -- lein schlaf -- en will.
 
   Ma -- ri -- a tut es nie -- der sing -- en,
   ih -- re groß -- e Lieb dar -- bring -- en.
 
   Still, still, still,
-  weil's Kind -- lein schla -- fen will.
+  weil's Kind -- lein schlaf -- en will.
 }
 
 stanzab = \lyricmode {
   Schlaf, schlaf, schlaf,
   mein lie -- bes Kind -- lein, schlaf!
 
-  Die Eng -- el tun schön mu -- si -- zie -- ren,
+  Die En -- gel tun schön mu -- si -- zie -- ren,
   bei dem Kind -- lein ju -- bi -- lie -- ren.
 
   Schlaf, schlaf, schlaf,

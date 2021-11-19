@@ -2,9 +2,6 @@
 
 ## New Carols
 
-### To add
-* [Still, Still, Still](http://www.cantatedomino.org/cd/still,-still,-still.---salzburg-melody--arr-mather-.php) (NB: arrangement needs vetting)
-
 ### Considering
 * cherry tree carol (need arrangement)
 * [Gaudete (Kay)](https://proarte-sion.ch/wp-content/uploads/2019/09/Gaudete.pdf) (too many parts?)
@@ -15,7 +12,6 @@
 * [Byrd "Lulla, Lullaby"](https://www.cpdl.org/wiki/images/c/c0/Lullaby%2C_my_sweet_little_baby_Byrd.pdf) (first part only)
 * [Lullay My Liking (Holst)](https://www.cpdl.org/wiki/images/f/fd/Ws-hols-lu2.pdf)
 * [Legend/Crown of Roses (Tchaikovsky)](https://www.cpdl.org/wiki/images/3/33/Tcha-leg.pdf)
-* IDK, [The Hallelujah fucking Chorus](https://www.cpdl.org/wiki/index.php/Hallelujah_(from_%27Messiah%27)_(George_Frideric_Handel))???
 
 ## Tweaks
 * [In Dulci: better translation](https://hymnary.org/text/in_dulci_jubilo_let_us_our_homage_show)
