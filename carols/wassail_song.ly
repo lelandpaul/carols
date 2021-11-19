@@ -16,14 +16,12 @@ global = {
 
 sopMusic = \relative c' {
   \time 6/8
-  \partial 8 \small e8 |
-  \normalsize
+  \partial 8 \parenthesize e8 |
   e4 fis8 gis4 fis8 |
   \slurDotted e4( fis8) gis4 fis8 |
   e4 b'8 b4 b8 |
 
-  \slurSolid b4.( b4) \small b8 |
-  \normalsize
+  \slurSolid b4.( b4) \parenthesize b8 |
   cis4 cis8 b4 gis8 |
   b4.( a4) gis8 |
   \slurDotted fis4( e8) fis4 gis8 |
@@ -50,14 +48,12 @@ sopWords = \lyricmode {
 
 altoMusic = \relative c' {
   \time 6/8
-  \small e8 |
-  \normalsize
+  \parenthesize e8 |
   e4 e8 dis4 dis8 |
   \slurDotted e4( e8) dis4 dis8 |
   e4 e8 a4 gis8 |
 
-  fis4.~ fis4 \small fis8 |
-  \normalsize
+  fis4.~ fis4 \parenthesize fis8 |
   a4 e8 e4 e8 |
   \slurSolid fis4.( dis4) e8 |
   \slurDotted cis4( e8) dis4 e8 |
@@ -118,14 +114,12 @@ altoWordsVII = \lyricmode {
 }
 tenorMusic = \relative c' {
   \time 6/8
-  \small gis8 |
-  \normalsize
+  \parenthesize gis8 |
   gis4 a8 b4 a8 |
   \slurDotted gis4( a8) b4 a8 |
   gis4 b8 dis4 e8 |
 
-  dis4.~ dis4 \small dis8 |
-  \normalsize
+  dis4.~ dis4 \parenthesize dis8 |
   e4 a,8 b4 b8 |
   b4.~ b4 b8 |
   cis4( b8) a4 gis8 |
@@ -152,14 +146,12 @@ tenorWords = \lyricmode {
 
 bassMusic = \relative c {
   \time 6/8
-  \small e8 |
-  \normalsize
+  \parenthesize e8 |
   e4 e8 b4 b8 |
   \slurDotted e4( e8) b4 b8 |
   e4 gis8 fis4 e8 |
 
-  b'4.~ b4 \small b8 |
-  \normalsize
+  b'4.~ b4 \parenthesize b8 |
   a4 a8 gis4 e8 |
   \slurSolid dis4.( fis4) e8 |
   \slurDotted a4( gis8) fis4 e8 |

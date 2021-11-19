@@ -38,12 +38,12 @@ sop = \context Voice = "sop" \relative c''   {
   a4. bes8 c4 a |
   g4.( g8) f2 |
   g4( a) g4. f8 |
-  f2. f4 |
+  f2. \parenthesize f4 |
 
   bes4. a8 bes4( c) |
   d( d) a( a) |
   c( a) g( f) |
-  e2. a4 |
+  e2. \parenthesize a4 |
 
   a4.( bes8) c4 a |
   g2 f |
@@ -62,12 +62,12 @@ alto=\context Voice = "alto" \relative c'  {
   c4. f8 f4 c |
   d4.( d8) d2 |
   f4( f) e4. f8 |
-  f2. f4 |
+  f2. \parenthesize f4 |
 
   f4. f8 f4( ees4) |
   d( d) f( f) |
   f( e) d( d) |
-  c2. c4 |
+  c2. \parenthesize c4 |
 
   c4.( f8) f4 c |
   d2 d |
@@ -86,12 +86,12 @@ tenor = \context Voice = "tenor" \relative c' {
   \slurDotted f4. c'8 c4 f, |
   a4.( a8) a2 |
   d4( d) bes4. a8 |
-  a2. a4 |
+  a2. \parenthesize a4 |
 
   bes4. c8 bes4( a) |
   bes( bes) a( a) |
   f( c') bes( a) |
-  g2. f4 |
+  g2. \parenthesize f4 |
 
   f4.( c'8) c4 f, |
   a2 a |
@@ -110,12 +110,12 @@ bass = \context Voice = "bass" \relative c {
   \slurDotted f4.( g8) a4 f |
   d4. d8 d2 |
   bes4( bes) c4. f8 |
-  f2. f4 |
+  f2. \parenthesize f4 |
 
   d4. f8 d4( c) |
   bes( bes) d d |
   a( a) bes( bes) |
-  c2. f4 |
+  c2. \parenthesize f4 |
 
   f4.( g8) a4 f |
   d2 d |

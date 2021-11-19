@@ -2,7 +2,6 @@
 
 import argparse
 import os.path
-# import os
 
 import pylatex
 from pylatex import Command, Package, UnsafeCommand
@@ -263,6 +262,8 @@ class Document(pylatex.Document):
 if __name__ == '__main__':
     parser = argument_parser()
     args = parser.parse_args()
+
+    utils.ensure_build_dir()
 
     carol_book = Document.make_carol_book(LY_DIR, BUILD_DIR,
         force_build=args.force_build, silent=args.silent)

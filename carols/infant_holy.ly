@@ -23,10 +23,10 @@ sop = \context Voice = "sop" \relative c' {
   \voiceOne
   \partial 4 \repeat unfold 2 { d8 d |
   g4 g fis8 g | a4 a b8 c |
-  d4 c b8 a | g2 } g8 fis |
+  d4 c b8 a | g2 \bar"" } g8 fis |
 
-  e4 e a8 g | fis4 fis b8 a |
-  g4 g c8 b | a4 a \repeat unfold 2 { b8 c |
+  e4 e a8 g | fis4 fis \bar"" b8 a |
+  g4 g c8 b | a4 a \bar"" \repeat unfold 2 { b8 c |
 
   d4 c b8 a | g2 }
   \bar "|."
@@ -107,7 +107,10 @@ stanzab = \lyricmode {
       \alto
     >>}
 
-    \lyricsto "sop" \context Lyrics = "stanza-1" {
+    \lyricsto "sop" \context Lyrics = "stanza-1" \with {
+        \override VerticalAxisGroup.
+        nonstaff-relatedstaff-spacing.padding = #1.2
+    } {
       \set stanza = "1."
       \stanzaa }
     \lyricsto "sop" \context Lyrics = "stanza-2" {

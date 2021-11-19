@@ -34,10 +34,10 @@ sopWords = \lyricmode {
 
 altoMusic = \relative c' {
   \repeat unfold 2 {
-    bes4 bes c es | es d bes2 | es4 es es es | es( d) bes2 |
+    bes4 bes c es | es d bes2 | es4 es es es | es( d) bes2 | \break
   }
-  bes'4. bes8 bes4 bes | g2 g | es4 es es es | es2 es4( d) |
-  es4. es8 es4( c) | d4. es8 f2 | es4 d c es | es( f) g2 |
+  bes'4. bes8 bes4 bes | g2 g | es4 es es es | es2 es4( d) | \break
+  es4. es8 es4( c) | d4. es8 f2 | es4 d c es | es( f) g2 | \break
   es4. f8 g4( es) | d4. es8 f2 | es4 d c es | es( d) bes2  \bar "|."
 }
 

@@ -75,7 +75,7 @@ def compile_ly(basename: str, silent=False):
     if res.returncode == 1:
         # Something went wrong
         raise LilypondException('Failed to compile lilypond file \'{}\' with stderr:\n{}'.
-            format(src_file, stderr))
+            format(basename, stderr))
 
     # Yay, success!
     if not silent:
@@ -192,3 +192,11 @@ def clean_title(title):
         return '{}, {}'.format(rest, first)
 
     return title
+
+
+def ensure_build_dir():
+    """`build` dir is not version controlled so make sure it exists before
+    trying to do anything with it."""
+    if not os.path.isdir('./build'):
+        os.mkdir('./build')
+
