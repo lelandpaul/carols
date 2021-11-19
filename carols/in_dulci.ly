@@ -70,44 +70,68 @@ altoMusic = \relative c' {
 }
 altoWords = \lyricmode {
   \set stanza = "1. "
-  \markup\italic In \markup\italic dul -- \markup\italic ci \markup\italic ju -- \markup\italic bi -- \markup\italic lo __
+  \lyricItal
+  In dul -- ci ju -- bi -- lo __
+  \lyricNormal
   Let us our hom -- age show __
   Our heart’s joy re -- clin -- eth \skip 1
-  \markup\italic in \markup\italic præ -- \markup\italic se -- \markup\italic pi -- \markup\italic o, __
+  \lyricItal
+  In præ -- se -- pi -- o, __
+  \lyricNormal
   And like a bright star shin -- eth
-  \markup\italic Ma -- \markup\italic tris \markup\italic in \markup\italic gre -- \markup\italic mi -- \markup\italic o. __
-  \markup\italic Al -- \markup\italic pha \markup\italic es \markup\italic et \markup\italic O! __
-  \markup\italic Al -- \markup\italic pha \markup\italic es \markup\italic et \markup\italic O!
+  \lyricItal
+  Ma -- tris in gre -- mi -- o. __
+  Al -- pha es et O! __
+  Al -- pha es et O!
+  \lyricNormal
 }
 altoWordsII = \lyricmode {
   \set stanza = "2. "
-  \markup\italic O \markup\italic Je -- \markup\italic su, \markup\italic par -- \markup\italic vu -- \markup\italic le, __
+  \lyricItal
+  O Je -- su, par -- vu -- le, __
+  \lyricNormal
   For thee I long al -- way; __
   Com -- fort my heart’s blind -- ness,
-  \markup\italic O \markup\italic Pu -- \markup\italic er \markup\italic op -- \markup\italic ti -- \markup\italic me, __
+  \lyricItal
+  O Pu -- er op -- ti -- me, __
+  \lyricNormal
   With all Thy lov -- ing kind -- ness,
-  \markup\italic O \markup\italic Prin -- \markup\italic ceps \markup\italic glo -- \markup\italic ri -- \markup\italic æ. __
-  \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic Te! __
-  \markup\italic Tra -- \markup\italic he \markup\italic me \markup\italic post \markup\italic Te!
+  \lyricItal
+  O Prin -- ceps glo -- ri -- æ. __
+  Tra -- he me post Te! __
+  Tra -- he me post Te!
+  \lyricNormal
 }
 altoWordsIII = \lyricmode {
   \set stanza = "3. "
-  \markup\italic O \markup\italic Pa -- \markup\italic tris \markup\italic ca -- \markup\italic ri -- \markup\italic tas! __
-  \markup\italic O \markup\italic na -- \markup\italic ti \markup\italic lem -- \markup\italic i -- \markup\italic tas! __
+  \lyricItal
+  O Pa -- tris ca -- ri -- tas! __
+  O na -- ti lem -- i -- tas! __
+  \lyricNormal
   Deep -- ly were we stain -- ed
-  \markup\italic Per \markup\italic nos -- \markup\italic tra \markup\italic cri -- \markup\italic mi -- \markup\italic na; __
+  \lyricItal
+  Per nos -- tra cri -- mi -- na; __
+  \lyricNormal
   But Thou for us hast gain -- ed
-  \markup\italic Cœ -- \markup\italic lo -- \markup\italic rum \markup\italic gau -- \markup\italic di -- \markup\italic a. __
+  \lyricItal
+  Cœ -- lo -- rum gau -- di -- a. __
+  \lyricNormal
   O that we were there! __ O that we were there!
 }
 altoWordsIV = \lyricmode {
   \set stanza = "4. "
-  \markup\italic U -- \markup\italic bi \markup\italic sunt \markup\italic gau -- \markup\italic di -- \markup\italic a __
+  \lyricItal
+  U -- bi sunt gau -- di -- a __
+  \lyricNormal
   If that they be not there?
   There are an -- gels sing -- ing \skip 1
-  \markup\italic No -- \markup\italic va \markup\italic can -- \markup\italic ti -- \markup\italic ca __
+  \lyricItal
+  No -- va can -- ti -- ca __
+  \lyricNormal
   And there the bells are ring -- ing
-  \markup\italic In \markup\italic Re -- \markup\italic gis \markup\italic cu -- \markup\italic ri -- \markup\italic a __
+  \lyricItal
+  In Re -- gis cu -- ri -- a __
+  \lyricNormal
   O that we were there! __ O that we were there!
 }
 
