@@ -84,6 +84,22 @@ accomp=\chordmode {
 }
 
 
+latin = \lyricmode {
+  \lyricItal
+  A -- des -- te fi -- de -- les
+  lae -- ti tri -- um -- phan -- tes,
+  Ve -- ni -- te, ve -- ni --
+  \set ignoreMelismata = ##t
+    te in
+  \set ignoreMelismata = ##f
+    Beth -- le -- hem.
+  Na -- tum vi -- de -- te
+  Re -- gem an -- ge -- lo -- rum:
+  Ve -- ni -- te a -- do -- re -- mus,
+  Ve -- ni -- te a -- do -- re -- mus,
+  Ve -- ni -- te a -- do -- re -- mus __
+  Do -- mi -- num.
+}
 
 stanzaa = \lyricmode {
   O come, all ye faith -- ful, Joy -- ful and tri -- um -- phant,
@@ -133,22 +149,6 @@ stanzaf = \lyricmode {
   We to the Christ Child Bring our hearts' o -- bla -- tions:
 }
 
-latin = \lyricmode {
-  \lyricItal
-  A -- des -- te fi -- de -- les
-  lae -- ti tri -- um -- phan -- tes,
-  Ve -- ni -- te, ve -- ni --
-  \set ignoreMelismata = ##t
-    te in
-  \set ignoreMelismata = ##f
-    Beth -- le -- hem.
-  Na -- tum vi -- de -- te
-  Re -- gem an -- ge -- lo -- rum:
-  Ve -- ni -- te a -- do -- re -- mus,
-  Ve -- ni -- te a -- do -- re -- mus,
-  Ve -- ni -- te a -- do -- re -- mus __
-  Do -- mi -- num.
-}
 
 \score {
   \context ChoirStaff <<
