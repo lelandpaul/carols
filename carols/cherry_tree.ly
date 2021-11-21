@@ -110,12 +110,11 @@ stanzac = \lyricmode {
   \skip 1
   O then \set ignoreMelismata = ##f
     be -- spoke Ma -- ry
-  with __ words so meek and mild: \skip 1
+  with __ words so __ meek and mild: \skip 1
 
-  % TODO: quotes
   \set ignoreMelismata = ##t
-  Pluck me one cher -- ry, Jo -- seph,
-  for __ _ I __ _ am with child.
+  "\"Pluck" me one cher -- ry, Jo -- seph,
+  for __ _ I __ _ am with "child.\""
 }
 stanzad = \lyricmode {
   \set ignoreMelismata = ##t
@@ -124,18 +123,18 @@ stanzad = \lyricmode {
     be -- spoke Jo -- seph
   with __ an -- swer most un -- kind: \skip 1
   \set ignoreMelismata = ##t
-  Let him pluck thee a cher -- ry
-  that _ brought thee now with child.
+  "\"Let" him pluck thee a cher -- ry
+  that __ _ brought thee now with "child.\""
 }
 
 stanzae = \lyricmode {
   \set ignoreMelismata = ##t
   O then \set ignoreMelismata = ##f
     be -- spoke the ba -- by
-  with -- in his mo -- ther's womb: \skip1
-  Bow down then the __ tallest tree
+  with -- in __ his __ mo -- ther's womb: \skip1
+  "\"Bow" down then the __ tallest tree
   \set ignoreMelismata = ##t
-  for my mo -- ther to have some.
+  for my mo -- ther to have "some.\""
 }
 
 stanzaf = \lyricmode {
@@ -143,19 +142,20 @@ stanzaf = \lyricmode {
   \skip 1
   Then bowed down the high -- est tree
   \set ignoreMelismata = ##f
-  un -- to his mo -- thers hand. \skip1
-  Then she cried, see Jo -- seph,
+  un -- to __ his __ mo -- ther's hand. \skip1
+  Then she cried, "\"See," __ Jo -- seph,
   \set ignoreMelismata = ##t
-  I have cher -- ries at com -- mand.
+  I have cher -- ries at com -- "mand!\""
 }
 
 stanzag = \lyricmode {
   \set ignoreMelismata = ##t
   Then Ma -- ry \set ignoreMelismata = ##f
     plucked her cher -- ry
-  as red as a -- ny blood;
-  then Ma -- ry she went home -- wards
-  all with her heavy load.
+  as __ red __ as __ a -- ny blood;
+  then Ma -- ry she went __ home -- wards
+  all __ \set ignoreMelismata = ##t
+    with her heav -- y load.
 
 }
 
