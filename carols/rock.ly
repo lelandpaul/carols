@@ -4,6 +4,8 @@
   title = "Rock of Ages"
   subtitle = "(Ma'oz Tzur)"
   arranger = "arr. Sarah Riskind (ed. McCormick)"
+  poem = "Jewish liturgical poem, 13th cen."
+  meter = "trans. Marcus Jastrow and Gustav Gottheil"
   index_as = "Ma'oz Tzur"
   enteredby = "Maia McCormick"
   maintainer = "Maia McCormick"
