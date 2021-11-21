@@ -34,6 +34,7 @@ def argument_parser():
     parser.add_argument(
         '--booklet',
         action='store_true',
+        default=True,
         help='generate an additional pdf of carols with pages interleaved and duplexed '
              'for booklet printing (print double-sided, fold, staple down the middle)',
     )
