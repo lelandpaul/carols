@@ -65,7 +65,7 @@ alto= \context Voice = "alto" \relative c' {
   % All your Christmases...
   d4 d e8. e16 d8 e | a,2( b8--) b'\rest d, d |
   % All your Christmases...
-  d4 d d8. b16 b8 bes | b!1 \bar "|."
+  d4 d d8. b16 b8 bes | << a1 b!-\markup { \italic "alto div." } >> \bar "|."
 }
 
 tenor = \context Voice = "tenor" \relative c' {
@@ -116,32 +116,34 @@ bass = \context Voice = "bass" \relative c {
 
 stanzaa = \lyricmode {
   I'm dream -- ing of a white Christ -- mas
-  just like the ones I used to know,
+  just like the ones I used to know, __
   where the tree -- tops glist -- en,
   and child -- ren list -- en
-  to hear sleigh bells in the snow.
+  to hear sleigh bells __ in the snow.
   I'm dream -- ing of a white Christ -- mas
-  with ev -- 'ry Christ -- mas card I write.
-  May your days be mer -- ry and bright,
-  and may all your Christ -- mas -- es be white;
+  with ev -- 'ry Christ -- mas card I write. __
+  May your days be mer -- ry and bright, __
+  and may all your Christ -- mas -- es be white; __
   and may all your Christ -- mas -- es be white.
 }
 
 \score {
-  \context ChoirStaff <<
-    \unset ChoirStaff.melismaBusyProperties
-    \context Staff ="upper"  { \clef "G" <<
-      \global
-      \sop
-      \alto
-    >>}
+  \transpose d es <<
+    \context ChoirStaff <<
+      \unset ChoirStaff.melismaBusyProperties
+      \context Staff ="upper"  { \clef "G" <<
+        \global
+        \sop
+        \alto
+      >>}
 
-    \lyricsto "sop" \context Lyrics = "stanza-1" {
-      \stanzaa }
-    \context Staff = "lower"  { \clef "F"<<
-      \global
-      \tenor
-      \bass
-    >>}
+      \lyricsto "sop" \context Lyrics = "stanza-1" {
+        \stanzaa }
+      \context Staff = "lower"  { \clef "F"<<
+        \global
+        \tenor
+        \bass
+      >>}
+    >>
   >>
 }
