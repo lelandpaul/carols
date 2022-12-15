@@ -69,7 +69,7 @@ bass = \context Voice = "bass" \relative c {
   c4 c cis8 cis | d4 d dis8 dis |
   e4 d c8 cis | d4. c8 b8 a |
   g4 a b8 dis | e2 d8 c |
-  b4 c d8 d | << g2 g2 >>
+  b4 c d8 d | << g2 g,2 >>
   \bar "|."
 
 }

@@ -28,7 +28,7 @@ sopMusic = \relative c' {
   d c c g | g' e d e | g, g c c | a f g\fermata \bar"" \break
 
   \override Stem.direction = #UP
-  c,^\markup { \italic\bold"SSAA" } |
+  c,^\markup { \italic\bold"SSAA (or SSAT)" } |
   c e g g | b b c4. c8 | b4 b c c | b c g e |
   e d g c, | c c d e | g g c c | a f g c | % break
   d c c g | g' e d e | g, g c c | a f g\fermata \bar"" \pageBreak
