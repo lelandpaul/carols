@@ -16,8 +16,6 @@
 * Ma'oz Tzur: hebrew?
 * Can "JC the Apple Tree" be one page?
 * can i write in descants??
-* put back Virgin Unspotted with better verses
-	* [idk if this is authoritative?](https://www.hymnsandcarolsofchristmas.com/Hymns_and_Carols/a_virgin_unspotted_gillmann_billings.htm) -- maybe 1,2,4,8?
 
 ## Chopping block
 * adam lay ybounden

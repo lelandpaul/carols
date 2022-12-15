@@ -9,7 +9,7 @@
   toc_as = "A Virgin Unspotted"
   maintainer = "Maia McCormick"
   maintainerEmail = "maia.mcc@gmail.com"
-  lastupdated = "2019/Dec/10"
+  lastupdated = "2022/Dec/14"
 }
 
 global = {
@@ -23,8 +23,9 @@ sopMusic = \relative c' {
   g bes g as c as | bes bes as g4 bes8 |
   bes bes bes bes g as | bes es d es4 es8 |
   es es es es c bes | c c c c4 bes8 |
-  bes c c c c bes | <bes g> <bes g> <bes g> <bes g>4 bes16( as) \break
+  bes c c c c bes | <bes g>^\markup { \italic "sop. div." } <bes g> <bes g> <bes g>4 \bar""
 
+  bes16( as) |
   \repeat volta 2 {
     g8 g as bes bes es | d c bes bes4 bes16( as) |
     g8 as g f g f |
@@ -34,12 +35,8 @@ sopMusic = \relative c' {
     { es8 g bes bes4. \bar "|." }
   }
 
-
-
 }
-sopWords = \lyricmode {
-
-}
+sopWords = \lyricmode {}
 
 altoMusic = \relative c' {
   \partial 8 es8 |
@@ -57,9 +54,6 @@ altoMusic = \relative c' {
     { es es d es4 es8 | }
     { es8 es d es4. \bar "|." }
   }
-
-
-
 }
 
 tenorMusic = \relative c {
@@ -77,11 +71,8 @@ tenorMusic = \relative c {
     { as g f es4 g16( as) | }
     { as8 g f es4. \bar "|." }
   }
-
 }
-tenorWords = \lyricmode {
-
-}
+tenorWords = \lyricmode {}
 
 bassMusic = \relative c {
   \partial 8 es8 |
@@ -98,15 +89,12 @@ bassMusic = \relative c {
     { c as bes es4 es8 | }
     { c8 as bes es4. \bar "|." }
   }
-
-
 }
-bassWords = \lyricmode {
 
-}
+bassWords = \lyricmode {}
 
 altoWords = \lyricmode {
-  \set stanza = #"  1. "
+  \set stanza = # "  1. "
   A vir -- gin un -- spot -- ted by Pro -- phet fore -- told,
   Should bring forth  the Sav -- ior which now we be -- hold,
   To be our Re -- deem -- er from death, hell, and sin,
@@ -117,35 +105,25 @@ altoWords = \lyricmode {
   born on this day
 }
 altoWordsII = \lyricmode {
-  \set stanza = #"  2. "
-  Then God sent an an -- gel from Hea -- ven so high,
-  To cer -- tain poor shep -- herds in fields where they lie,
-  And bade them no long -- er in sor -- row to stay,
-  Be -- cause that our Sav -- iour was born on this day. Then
+  \set stanza = # "  2. "
+  At Beth -- le -- hem ci -- ty in Is -- 'rael, it was
+  That Jo -- seph and Ma -- ry to -- geth -- er did pass,
+  All for to be tax -- ed when thi -- ther they came,
+  For Cae -- sar Au -- gus -- tus com -- mand -- ed the same.
 }
-
-moreverses = \markup{
-  \fill-line {
-    \column{
-      \line { \bold "Verse 3:" }
-      \smaller {
-        \line{ Then presently after the shepherds did spy }
-        \line{ Vast numbers of angels to stand in the sky; }
-        \line{ They joyfully talkèd and sweetly did sing, }
-        \line{ To God be all glory, our heavenly King. }
-      }
-    }
-
-    \column{
-      \line { \bold "Verse 4:" }
-      \smaller {
-        \line{ To teach us humility all this was done, }
-        \line{ And learn we from thence haughty pride for to shun: }
-        \line{ A manger His cradle who came from above, }
-        \line{ The great God of mercy, of peace, and of love. }
-      }
-    }
-  }
+altoWordsIII = \lyricmode {
+  \set stanza = # "  3. "
+  But Ma -- ry's full time be -- ing come as we find,
+  She brought forth her first -- born to save all man -- kind:
+  The inn be -- ing full, for this heav -- en -- ly guest,
+  No place there was found where to lay him to rest.
+}
+altoWordsIV = \lyricmode {
+  \set stanza = # "  4. "
+  To teach us hu -- mil -- i -- ty all this was done,
+  And learn we from thence haught -- y pride for to shun:
+  A man -- ger His cra -- dle who came from a -- bove,
+  The great God of mer -- cy, of peace, and of love.
 }
 
 \score {
@@ -155,7 +133,9 @@ moreverses = \markup{
         \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
         \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
       >>
-      \new Lyrics \with { alignAboveContext = #"women"} \lyricsto "sopranos" \sopWords
+      \new Lyrics \with { alignAboveContext = #"women" } \lyricsto "sopranos" \sopWords
+      \new Lyrics = "altosIV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIV
+      \new Lyrics = "altosIII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsIII
       \new Lyrics = "altosII"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsII
       \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
       \new Staff = men <<
@@ -168,10 +148,10 @@ moreverses = \markup{
     >>
   >>
   \layout {
+    \override LyricText.font-size = 0.8
     \context {
       \Staff
       \remove Time_signature_engraver
     }
   }
 }
-\moreverses
