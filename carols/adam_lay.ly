@@ -33,7 +33,7 @@ sop = \context Voice = "sop" \relative c'' {
   b4. b8 a b | fis4 fis2 | b4. d8 cis b | fis2. |
   d'4 d d | \break b b2 | a8 a b4 gis | fis2. |
 
-  fis2 fis8 b | a4 a4. a8 | \break d4. d8 a b | a2 r4 |
+  fis2 fis8 b | a4 a4. a8 | \break d4. d8 a b | a2 b4\rest |
   a a b | a8( g) g2 | fis8 fis g4 b | fis2. | \break
 
   d'4 d8 d cis d | a a a4. a8 | d4. fis8 e d | b2. |
@@ -51,7 +51,7 @@ alto= \context Voice = "alto" \relative c' {
   fis4 fis e8 d | cis4 cis2 | d4 fis e8 d | d4( cis2) |
   fis4 fis8( e) a4 | a2 g4 | fis8 fis fis4 e8( d) | cis2. |
 
-  d2 cis8 b | cis4 cis4. fis8 | g4. fis8 e d | cis2 r4 |
+  d2 cis8 b | cis4 cis4. fis8 | g4. fis8 e d | cis2 s4 |
   fis fis8( e) fis4 | e4 d2 | d8 d d4 e | cis2. |
 
   fis4 fis8 g a fis | e e e4 fis | fis fis g8 a | a4( g2) |
