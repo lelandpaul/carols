@@ -15,4 +15,5 @@ test.*
 .DS_Store
 !todo/*.pdf
 !carols.pdf
+!carols-print.pdf
 !carols-booklet.pdf
