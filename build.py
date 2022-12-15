@@ -12,6 +12,9 @@ import utils
 # .ly "header" keys
 TITLE = 'title'
 TOC_AS = 'toc_as'
+VERSION = 'version'  # hardcoded in utils, awkward
+
+NULL_VERSION = (0, 0, 0)
 
 # We rely on a specific directory structure to work with the Dockerfile/Lilypond
 # compilation script, etc.:
@@ -78,14 +81,15 @@ class CarolInfo():
         filename_base = os.path.splitext(os.path.basename(ly_filepath))[0]
         pdf_base = os.path.join(pdf_dir, filename_base)
 
-        return cls(filename_base, ly_filepath, pdf_base, toc_entry)
+        return cls(filename_base, ly_filepath, pdf_base, headers.get(VERSION, NULL_VERSION), toc_entry)
 
     def __init__(self, filename_base: str, ly_filepath: str,
-                 pdf_base: str, toc_entry: str=None):
+                 pdf_base: str, version: tuple, toc_entry: str=None):
         self.filename_base = filename_base
         self.ly_filepath = ly_filepath
         self.pdf_base = pdf_base # pdf path without file extension
         self.pdf_filepath = '{}.pdf'.format(pdf_base)
+        self.version = version
 
         if toc_entry:
             self.toc_entry = utils.clean_title(toc_entry)
@@ -105,7 +109,7 @@ class CarolInfo():
 
         # If we make it down here, either we're in force_build mode or pdf isn't
         # current: compile the ly file into the target pdf
-        utils.compile_ly(self.filename_base, silent=silent)
+        utils.compile_ly(self.filename_base, self.version, silent=silent)
 
 
 class Document(pylatex.Document):

@@ -11,6 +11,8 @@ class LilypondException(Exception):
 
 HEADER_REGEXP = re.compile('\\\\header\s*{\s*(.*?)}', re.DOTALL)
 EQUALS_REGEXP = re.compile('\s*=\s*')
+LILYPOND_VERSION_REGEXP = re.compile('\\\\version "(\d+)\.(\d+)\.(\d+)"', re.MULTILINE)
+
 
 def ly_files_to_compile(ly_dir, exceptions=['header.ly']):
     """
@@ -43,7 +45,13 @@ def headers_from_ly(ly_body: str):
     if not match:
         raise Exception('whelp.')
     headers_str = match.group(1)
-    return headers_block_to_dict(headers_str)
+    headers = headers_block_to_dict(headers_str)
+
+    version_match = LILYPOND_VERSION_REGEXP.search(ly_body)
+    if version_match and len(version_match.groups()) == 3:
+        headers['version'] = tuple([int(x) for x in version_match.groups()])
+
+    return headers
 
 
 def headers_block_to_dict(headers_block: str):
@@ -62,12 +70,22 @@ def headers_block_to_dict(headers_block: str):
 
     return headers
 
-def compile_ly(basename: str, silent=False):
-    # note: dest_file should NOT have an extension (.pdf is added automatically in compilation)
-    print('Compiling carols/{basename}.ly --> build/{basename}.pdf'.format(basename=basename))
 
-    res = subprocess.run(['./compile_with_docker.sh', basename],
-        stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+def compile_ly(basename: str, version: tuple, silent=False):
+    # note: dest_file should NOT have an extension (.pdf is added automatically in compilation)
+    src_file = f'carols/{basename}.ly'
+    dest_file = f'build/{basename}'
+
+    msg = f'Compiling {src_file} --> {dest_file}.pdf (v{version[0]}.{version[1]}.{version[2]})'
+    res = None
+    if version >= (2, 22, 0):
+        print(f'{msg}\n\t(new version, using current executable)')
+        res = subprocess.run(['lilypond', '-drelative-includes', '-o', dest_file, src_file],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    else:
+        print(f'{msg}\n\t(old version, compiling via docker)')
+        res = subprocess.run(['./compile_with_docker.sh', basename],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     stdout = res.stdout.decode("utf-8")
     stderr = res.stderr.decode("utf-8")
