@@ -223,80 +223,80 @@ bassus={
 	d2 a,4 d ~ |
 	d d a, a, |
 	d2 d |
-        s4*0^\markup{\larger "Coplas"}
+        s4*0^\markup{\larger "Coplas"} \slurDotted
 	a4 a g a |
 %30
 	f2 e4 g ~ |
 	g g e f |
-	d1 |
+	d2( d) |
 	a4 a g a |
 	f2 f4 e |
 %35
 	g g e f |
-	d1 |
+	d2( d) |
 	a4 a g a |
 	f2 f4 e |
 	d e f g |
 %40
-	a1 |
+	a2( a) |
 	a4 a g a |
 	f2 f4 e |
 	g g e f |
 	d2 d
-        \mark \markup{"D.S."}
+        \mark \markup{"D.S."} \slurSolid
 }
 
 textocantus=\lyricmode{
 Ri -- u, ri -- u,
 chi -- u,
-la _ guar -- da ri -- be -- ra:
-Dios guar -- dó del lo -- bo de nues -- tra cor -- de -- ra
+la __ _ guar -- da ri -- be -- ra:
+Dios guar -- dó del lo -- bo de nues -- tra cor -- de -- ra,
 Dios guar -- dó del lo -- bo
-a _ nues -- tra cor -- de -- ra.
+a __ _ nues -- tra cor -- de -- ra.
 }
 
 textoaltus=\lyricmode{
 Ri -- u, ri -- u,
 chi -- u,
-la _ guar -- da ri -- be -- ra:
+la __ _ guar -- da ri -- be -- ra:
 Dios guar -- dó del lo -- bo,
-lo -- bo, de nues -- tra cor -- de -- ra
-Dios guar -- dó del lo -- bo, lo -- bo  a _ nues -- tra cor -- de -- ra.
+lo -- bo, de nues -- tra cor -- de -- ra,
+Dios guar -- dó del lo -- bo, lo -- bo  a __ _ nues -- tra cor -- de -- ra.
 }
 
 textotenor=\lyricmode{
 Ri -- u,
 ri -- u,
 chi -- u,
-la _ guar -- da ri -- be -- ra:
+la __ _ guar -- da ri -- be -- ra:
 Dios guar -- dó del lo -- bo,
 del lo -- bo,
-de nues -- tra cor -- de -- ra
+de nues -- tra cor -- de -- ra,
 Dios guar -- dó del lo -- bo,
-del -- lo -- bo a _
+del -- lo -- bo a __ _
 nues -- tra cor -- de -- ra.
 }
 
 textobassus=\lyricmode{
 Ri -- u, ri -- u,
 chi -- u,
-la _ guar -- da ri -- be -- ra:
-Dios guar -- dó del lo -- bo de nues -- tra cor -- de -- ra
+la __ _ guar -- da ri -- be -- ra:
+Dios guar -- dó del lo -- bo de nues -- tra cor -- de -- ra,
 Dios guar -- dó del lo -- bo
-a _ nues -- tra cor -- de -- ra.
+a __ _ nues -- tra cor -- de -- ra.
 Ri -- u, ri -- u,
 chi -- u,
-la _ guar -- da ri -- be -- ra:
+la __ _ guar -- da ri -- be -- ra:
 Dios guar -- dó del lo -- bo,
 del lo -- bo,
-de nues -- tra cor -- de -- ra
+de nues -- tra cor -- de -- ra,
 Dios guar -- dó del lo -- bo, del lo -- bo
-a _ nues -- tra cor -- de -- ra.
+a __ _ nues -- tra cor -- de -- ra.
 El lo -- bo ra -- bio -- so
-la _ qui -- so mor -- der,
-mas Dios po -- de -- ro -- so la su -- po de -- fen -- der;
-qui -- so -- la ha -- cer que no pu -- die -- se pe -- car,
-ni-aun o -- ri -- gi -- nal es -- ta Vir -- gen no tu -- vie -- ra.
+la __ _ qui -- so mor -- der, __ _
+mas Dios po -- de -- ro -- so la su -- po de -- fen -- der; __ _
+qui -- so -- la ha -- cer que no pu -- die -- se pe -- car, __ _
+ni~aun o -- ri -- gi -- nal es -- ta Vir -- gen no tu -- vie -- ra.
 }
 textobassusb=\lyricmode{
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -304,11 +304,11 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 Es -- te que~es na -- ci -- do
-es _ el gran mo -- \mt #1 nar-ca,
+es _ el gran mo -- nar -- ca,
 Cris -- to pa -- tri -- ar -- ca
-de car -- _ ne ves -- \mt #1 ti-do;
+de car -- _ ne ves -- ti -- do;
 ha -- nos re -- di -- mi -- do
-con se ha -- cer chi -- \mt #1 qui-to
+con se ha -- cer chi -- qui -- to
 aun -- que~e -- ra~in -- fi -- ni -- to,
 fi -- ni -- to se hi -- cie -- ra.
 }
@@ -361,6 +361,9 @@ fi -- ni -- to se hi -- cie -- ra.
 			#'((basic-distance . 0) (minimum-distance . 0) (padding . 1))
 		\override LyricText.font-size = #1.2
 		\override LyricHyphen.minimum-distance = #0.5
+
+		% with thanks: https://music.stackexchange.com/a/117504
+  		\override LyricExtender.right-padding = #1
 	}
 	\context {\Score
 		tempoHideNote = ##t
@@ -391,4 +394,5 @@ fi -- ni -- to se hi -- cie -- ra.
 	last-bottom-spacing = % footer
 	#'((basic-distance . 15) (minimum-distance . 0) (padding . 0))
 	markup-system-spacing.padding = #2.5
+
 }
