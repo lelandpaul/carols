@@ -5,7 +5,7 @@
   arranger = "Rod Mather"
   poet = "Georg Gotsch"
   meter = "trans. George K. Evans"
-  title = "Still, Still Still"
+  title = "Still, Still, Still"
   maintainer = "Maia McCormick"
   maintainerEmail = "maia.mcc@gmail.com"
   lastupdated = "2019/Nov/17"
