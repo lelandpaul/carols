@@ -1,6 +1,6 @@
 # TODO:
 
-## New Carols
+## Content
 
 ### Considering
 * [Gaudete (Kay)](https://proarte-sion.ch/wp-content/uploads/2019/09/Gaudete.pdf) (too many parts?)
@@ -12,12 +12,12 @@
 * [Lullay My Liking (Holst)](https://www.cpdl.org/wiki/images/f/fd/Ws-hols-lu2.pdf)
 * [Legend/Crown of Roses (Tchaikovsky)](https://www.cpdl.org/wiki/images/3/33/Tcha-leg.pdf)
 
-## Tweaks
+### Tweaks
 * Ma'oz Tzur: hebrew?
 * Can "JC the Apple Tree" be one page?
 * can i write in descants??
 
-## Chopping block
+### Chopping block
 * adam lay ybounden
 * midnight clear - sullivan
 * jesus christ the apple tree
@@ -25,3 +25,7 @@
 * We three kings
 * Gloucestershire Wassail
 * riu riu
+
+## Tech
+* minimum lilypond version? / check cli version on run
+* don't hardcode version turning point for docker vs cli
