@@ -3,8 +3,7 @@ import os.path
 import re
 import subprocess
 
-from PyPDF2 import PdfFileWriter, PdfFileReader
-from PyPDF2.pdf import PageObject
+from PyPDF2 import PdfWriter, PdfReader, PageObject, Transformation
 
 class LilypondException(Exception):
     pass
@@ -108,15 +107,15 @@ def make_booklet(input_file, output_file):
     should then print this document with 2 pages per sheet.)
     """
 
-    output_pdf = PdfFileWriter()
+    output_pdf = PdfWriter()
 
     with open(input_file, 'rb') as readfile:
-        orig_pdf = PdfFileReader(readfile)
+        orig_pdf = PdfReader(readfile)
 
-        input_pdf = PdfFileWriter()
-        input_pdf.cloneDocumentFromReader(orig_pdf)
+        input_pdf = PdfWriter()
+        input_pdf.clone_document_from_reader(orig_pdf)
 
-        total_pages = input_pdf.getNumPages()
+        total_pages = len(input_pdf.pages)
 
         # For booklets to print correctly, number of pages should be divisible
         # by 4. If this isn't the case, add blank pages to the end until total
@@ -124,10 +123,10 @@ def make_booklet(input_file, output_file):
         remainder = total_pages % 4
         if remainder != 0:
             for _ in range(4-remainder):
-                input_pdf.addBlankPage()
+                input_pdf.add_blank_page()
 
             # reset total_pages, b/c it has changed
-            total_pages = input_pdf.getNumPages()
+            total_pages = len(input_pdf.pages)
 
         i = 0 # increment from start
         j = total_pages - 1 # decrement from end
@@ -139,17 +138,17 @@ def make_booklet(input_file, output_file):
 
 
         # Get dimensions from the first page (we'll need them for duplexing)
-        pg = input_pdf.getPage(0)
-        width, height = pg.mediaBox.getWidth(), pg.mediaBox.getHeight()
+        pg = input_pdf.pages[0]
+        width, height = pg.mediabox.width, pg.mediabox.height
 
         # Given pages A, B, C, D, we want to reorder them: D, A, B, C
         for _ in range(total_pages//4):
-            output_pdf.addPage(duplex_pages(input_pdf.getPage(j), input_pdf.getPage(i),
+            output_pdf.add_page(duplex_pages(input_pdf.pages[j], input_pdf.pages[i],
                 orig_width=width, orig_height=height))
             j -= 1
             i += 1
 
-            output_pdf.addPage(duplex_pages(input_pdf.getPage(i), input_pdf.getPage(j),
+            output_pdf.add_page(duplex_pages(input_pdf.pages[i], input_pdf.pages[j],
                 orig_width=width, orig_height=height))
             i += 1
             j -= 1
@@ -169,27 +168,38 @@ def duplex_pages(p1, p2, orig_width=0, orig_height=0):
     be pulled from the input pdfs.
     """
     if not orig_width:
-        orig_width = p1.mediaBox.getWidth()
+        orig_width = p1.mediabox.width
     if not orig_height:
-        orig_height = p1.mediaBox.getHeight()
+        orig_height = p1.mediabox.height
 
     orig_width = int(orig_width)
     orig_height = int(orig_height)
 
     # Target is landscape (reverse original width and height)
-    target = PageObject.createBlankPage(None, orig_height, orig_width)
+    target = PageObject.create_blank_page(None, orig_height, orig_width)
 
     # Scale pages
     SCALE_FACTOR = .7
-    p1.scaleBy(SCALE_FACTOR)
-    p2.scaleBy(SCALE_FACTOR)
+    p1.scale_by(SCALE_FACTOR)
+    p2.scale_by(SCALE_FACTOR)
     new_width, new_height = SCALE_FACTOR * orig_width, SCALE_FACTOR * orig_height
 
     # Merge them into the target page
-    target.mergeTranslatedPage(p1,
-        (orig_height/2 - new_width)/2, (orig_width - new_height)/2)
-    target.mergeTranslatedPage(p2,
-        orig_height/2 + (orig_height/2 - new_width)/2, (orig_width - new_height)/2)
+    p1.add_transformation(
+            Transformation().translate(
+                (orig_height/2 - new_width)/2,
+                (orig_width - new_height)/2
+            )
+        )
+    target.merge_page(p1)
+
+    p2.add_transformation(
+            Transformation().translate(
+                orig_height/2 + (orig_height/2 - new_width)/2, 
+                (orig_width - new_height)/2
+            )
+        )
+    target.merge_page(p2)
 
     return target
 
