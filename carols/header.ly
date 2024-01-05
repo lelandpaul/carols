@@ -15,6 +15,7 @@
 
 preamble = {
   #(set-global-staff-size 14)
+  \sacredHarpHeads
 }
 
 \layout {

@@ -24,6 +24,7 @@ sop = \context Voice = "sop" \relative c' {
   \tempo "Schmaltzissimo"
 
   \voiceOne
+  \global
   % I'm dreaming...
   fis2 g8 fis eis fis | g2 gis8-- a4. |
   % just like the ones...
@@ -47,6 +48,7 @@ sop = \context Voice = "sop" \relative c' {
 
 alto= \context Voice = "alto" \relative c' {
   \voiceTwo
+  \global
   % I'm dreaming...
   d2 e8 d cis d | e2 eis8-- fis4. |
   % just like the ones...
@@ -70,6 +72,7 @@ alto= \context Voice = "alto" \relative c' {
 
 tenor = \context Voice = "tenor" \relative c' {
   \voiceOne
+  \global
   % I'm dreaming...
   a2 b8 a gis a | b2 b8-- a4. |
   % just like the ones...
@@ -93,6 +96,7 @@ tenor = \context Voice = "tenor" \relative c' {
 
 bass = \context Voice = "bass" \relative c {
   \voiceTwo
+  \global
   % I'm dreaming...
   d2 d8 d d d | d2 d8-- d4. |
   % just like the ones...
@@ -132,7 +136,6 @@ stanzaa = \lyricmode {
     \context ChoirStaff <<
       \unset ChoirStaff.melismaBusyProperties
       \context Staff ="upper"  { \clef "G" <<
-        \global
         \sop
         \alto
       >>}
@@ -140,7 +143,6 @@ stanzaa = \lyricmode {
       \lyricsto "sop" \context Lyrics = "stanza-1" {
         \stanzaa }
       \context Staff = "lower"  { \clef "F"<<
-        \global
         \tenor
         \bass
       >>}

@@ -16,13 +16,14 @@
 global= {
   \preamble
   \time 3/4
-  \key a \minor
+  \key c \major
   \set Timing.beamExceptions = #'()
   \set Timing.baseMoment = #(ly:make-moment 1/4)
 }
 
 sop = \context Voice = "sop" \relative c' {
   \voiceOne
+  \global
   \partial 4 e4 |
   a a a8( b) | c4 c c8( b) | a4 a g | e2 e8( g) |
   a4 a g | e e e8( g) | a4 a g | e2 e4 |
@@ -32,6 +33,7 @@ sop = \context Voice = "sop" \relative c' {
 
 alto=\context Voice = "alto" \relative c' {
   \voiceTwo
+  \global
   \partial 4 e4 |
   c8( d) e4 e8( g) | g4 g g | g f8( e) d4 | e2 c8( d) |
   e4 e d | b b e8( d) | e4 e d | c2 e4 |
@@ -41,6 +43,7 @@ alto=\context Voice = "alto" \relative c' {
 
 tenor = \context Voice = "tenor" \relative c' {
   \voiceOne
+  \global
   \partial 4 b4 |
   a8( b) c4 c8( d) | e4 e c | c a b | c2 g4 |
   c c b | a g g | c8( b) c4 g | g2 c4 |
@@ -50,6 +53,7 @@ tenor = \context Voice = "tenor" \relative c' {
 
 bass = \context Voice = "bass" \relative c {
   \voiceTwo
+  \global
   \partial 4 e4 |
   a8( b) a4 a8( g) | c4 c e, | f f g | c,2 c8( b) |
   a4 a b | e e c8( b) | a4 a b | c2 c4 |
@@ -94,7 +98,6 @@ stanzac = \lyricmode {
   \context ChoirStaff <<
     \unset ChoirStaff.melismaBusyProperties
     \context Staff ="upper"  { \clef "G" <<
-      \global
       \sop
       \alto
     >>}
@@ -110,7 +113,6 @@ stanzac = \lyricmode {
       \stanzac }
 
     \context Staff = "lower"  { \clef "F"<<
-      \global
       \tenor
       \bass
     >>}

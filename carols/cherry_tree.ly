@@ -23,6 +23,7 @@ global= {
 
 sop = \context Voice = "sop" \relative c'   {
   \voiceOne \slurDotted \phrasingSlurDotted
+  \global
   \partial 4 \parenthesize e4
   a( gis) fis e |
   a( a) b4 \slurSolid cis8( d) | \break
@@ -38,6 +39,7 @@ sop = \context Voice = "sop" \relative c'   {
 
 alto=\context Voice = "alto" \relative c'  {
   \voiceTwo \slurDotted \phrasingSlurDotted
+  \global
   \partial 4 \parenthesize e4
   e( d) cis e |
   cis( e) fis gis |
@@ -55,6 +57,7 @@ alto=\context Voice = "alto" \relative c'  {
 
 tenor = \context Voice = "tenor" \relative c' {
   \voiceOne \phrasingSlurDotted
+  \global
   \partial 4 \parenthesize e4
   \slurDotted
   cis( b) a gis |
@@ -71,6 +74,7 @@ tenor = \context Voice = "tenor" \relative c' {
 
 bass = \context Voice = "bass" \relative c {
   \voiceTwo
+  \global
   \partial 4 \parenthesize e4
   \slurDotted
   a,4( b) cis d |
@@ -163,7 +167,6 @@ stanzag = \lyricmode {
   \context ChoirStaff <<
     \unset ChoirStaff.melismaBusyProperties
     \context Staff ="upper"  { \clef "G" <<
-      \global
       \sop
       \alto
     >>}
@@ -190,7 +193,6 @@ stanzag = \lyricmode {
       \set stanza = "7."
       \stanzag }
     \context Staff = "lower"  { \clef "F"<<
-      \global
       \tenor
       \bass
     >>}

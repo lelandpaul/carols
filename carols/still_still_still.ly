@@ -16,12 +16,14 @@
 \include "header.ly"
 
 global= {
+  \preamble
   \time 2/2
   \key d \major
 }
 
 sop = \context Voice = "sop"    {
   \voiceOne
+  \global
   \relative c'' {
     a4( d) fis,( a) | d,2. d8( fis) |
     e4 e8( g) cis,4 cis8( e) | d2. fis4 |
@@ -37,6 +39,7 @@ sop = \context Voice = "sop"    {
 
 alto=\context Voice = "alto"   {
   \voiceTwo
+  \global
   \relative c' {
     fis2 cis | cis b |
     b4 b b a | a2. d4 |
@@ -52,6 +55,7 @@ alto=\context Voice = "alto"   {
 
 tenor = \context Voice = "tenor"   {
   \voiceOne
+  \global
   \relative c' {
     a2 a4( g) | fis2 fis |
     g4 g g g | fis2. a4 |
@@ -67,6 +71,7 @@ tenor = \context Voice = "tenor"   {
 
 bass = \context Voice = "bass"   {
   \voiceTwo
+  \global
     \relative c {
     d2 a | b a4( a') |
     g4 fis e a, | d2. d4 |
@@ -146,7 +151,6 @@ verses = \markup{
   \context ChoirStaff <<
     \unset ChoirStaff.melismaBusyProperties
     \context Staff ="upper"  { \clef "G" <<
-      \global
       \sop
       \alto
     >>}
@@ -162,7 +166,6 @@ verses = \markup{
       \stanzac }
 
     \context Staff = "lower"  { \clef "F"<<
-      \global
       \tenor
       \bass
     >>}

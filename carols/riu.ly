@@ -22,6 +22,7 @@ global={\key c \major \time 2/2  \skip 1*13 \bar "||" \break
 }
 
 cantus={
+    \preamble
 	R1*4/4 |
 	R1*4/4 |
 	R1*4/4 |
@@ -80,6 +81,7 @@ cantus={
 }
 
 altus={
+    \preamble
 	R1*4/4 |
 	R1*4/4 |
 	R1*4/4 |
@@ -135,6 +137,7 @@ altus={
 }
 
 tenor={
+    \preamble
 	R1*4/4 |
 	R1*4/4 |
 	R1*4/4 |
@@ -190,6 +193,7 @@ tenor={
 }
 
 bassus={
+    \preamble
 	a4 a g a |
 	f2 e4 d ~ |
 	d e f g |

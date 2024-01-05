@@ -17,6 +17,7 @@
 \include "header.ly"
 
 global= {
+  \preamble
   \key f \major
   \time 3/8
 }
@@ -24,6 +25,7 @@ global= {
 sop = \context Voice = "sop" {
   \relative c'' {
     \voiceOne
+    \global
     \slurDotted
     c4 f,8 | f( e) f |
     g( a) bes | a4 g8 |
@@ -42,6 +44,7 @@ sop = \context Voice = "sop" {
 alto=\context Voice = "alto"   {
   \relative c' {
     \voiceTwo
+    \global
     \slurDotted
     f4 c8 | d( d) d |
     d( d) d | f4 e8 |
@@ -60,6 +63,7 @@ alto=\context Voice = "alto"   {
 tenor = \context Voice = "tenor"   {
   \relative c' {
     \voiceOne
+    \global
     \slurDotted
     a4 a8 | a( g) a |
     g( fis) g | \slurSolid f( a) c |
@@ -81,6 +85,7 @@ tenor = \context Voice = "tenor"   {
 bass = \context Voice = "bass"   {
   \relative c {
     \voiceTwo
+    \global
     \slurDotted
     f4 f8 | d( d) d |
     bes( a) g | c4 bes8 |
@@ -150,7 +155,6 @@ stanzaf = \lyricmode {
     \context ChordNames \accomp
     \unset ChoirStaff.melismaBusyProperties
     \context Staff ="upper"  { \clef "G" <<
-      \global
       \sop
       \alto
     >>}
@@ -174,7 +178,6 @@ stanzaf = \lyricmode {
                                 %		\set stanza = "6."
                                 %			\stanzaf }
     \context Staff = "lower"  { \clef "F"<<
-      \global
       \tenor
       \bass
     >>}

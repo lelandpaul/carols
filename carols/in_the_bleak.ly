@@ -29,6 +29,7 @@ global= {
 
 sop = \context Voice = "sop" \relative c''   {
   \voiceOne
+  \global
   \slurDotted
   a4.( bes8) c4 a |
   g2 f |
@@ -54,6 +55,7 @@ sop = \context Voice = "sop" \relative c''   {
 
 alto=\context Voice = "alto" \relative c'  {
   \voiceTwo
+  \global
   \slurDotted f4.( f8) f4 c |
   d2 d |
   d4.( d8) d4 c |
@@ -78,6 +80,7 @@ alto=\context Voice = "alto" \relative c'  {
 
 tenor = \context Voice = "tenor" \relative c' {
   \voiceOne
+  \global
   \slurDotted c4.( c8) c4 f, |
   a2 a |
   g4.( d8) d4 f |
@@ -102,6 +105,7 @@ tenor = \context Voice = "tenor" \relative c' {
 
 bass = \context Voice = "bass" \relative c {
   \voiceTwo
+  \global
   \slurDotted f4.( g8) a4 f |
   d2 d |
   bes4.( c8) bes4 a |
@@ -181,7 +185,6 @@ stanzad = \lyricmode {
   \context ChoirStaff <<
     \unset ChoirStaff.melismaBusyProperties
     \context Staff ="upper"  { \clef "G" <<
-      \global
       \sop
       \alto
     >>}
@@ -199,7 +202,6 @@ stanzad = \lyricmode {
       \set stanza = "4."
       \stanzad }
     \context Staff = "lower"  { \clef "F"<<
-      \global
       \tenor
       \bass
     >>}

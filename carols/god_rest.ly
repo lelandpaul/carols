@@ -24,13 +24,14 @@
 global = {
   \preamble
   \time 4/4
-  \key e \minor
+  \key g \major
 
   \partial 4
 }
 
 sop = \context Voice = "sop"    {
   \voiceOne
+  \global
   \relative c' {
     \slurDotted
     e4 |
@@ -63,6 +64,7 @@ sop = \context Voice = "sop"    {
 
 alto=\context Voice = "alto"   {
   \voiceTwo
+  \global
   \relative c' {
     e4 |
     e g fis dis |
@@ -96,6 +98,7 @@ alto=\context Voice = "alto"   {
 
 tenor = \context Voice = "tenor"   {
   \voiceOne
+  \global
   \relative c' {
     e,4 |
     g e fis b |
@@ -128,6 +131,7 @@ tenor = \context Voice = "tenor"   {
 
 bass = \context Voice = "bass"   {
   \voiceTwo
+  \global
   \relative c' {
     e,4 |
     e e dis b |
@@ -215,7 +219,6 @@ stanzad = \lyricmode {
     \context ChordNames \accomp
     \unset ChoirStaff.melismaBusyProperties
     \context Staff ="upper"  { \clef "G" <<
-      \global
       \sop
       \alto
     >>}
@@ -233,7 +236,6 @@ stanzad = \lyricmode {
       \set stanza = "4."
       \stanzad }
     \context Staff = "lower"  { \clef "F"<<
-      \global
       \tenor
       \bass
     >>}

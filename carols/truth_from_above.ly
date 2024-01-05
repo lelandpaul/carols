@@ -13,11 +13,13 @@
 }
 
 global = {
+  \preamble
   \key c \major
   \time 5/4
 }
 
 sopMusic = \relative c' {
+  \global
   \repeat volta 3 {
     \partial 4 e4 |
     a b c( b) a |
@@ -39,6 +41,7 @@ sopWords = \lyricmode {
 }
 
 altoMusic = \relative c' {
+  \global
   e4 |
   a a a( g) f |
   e d b2. e4 |
@@ -98,6 +101,7 @@ altoWordsVI = \lyricmode {
   \set ignoreMelismata = ##t
 }
 tenorMusic = \relative c' {
+  \global
   e4 |
   c d e2 c4 |
   c a a( g2) \breathe b4 |
@@ -116,6 +120,7 @@ tenorWords = \lyricmode {
 }
 
 bassMusic = \relative c {
+  \global
   e4 |
   a a a( e) f |
   c f e2. g4 |
@@ -137,8 +142,8 @@ bassWords = \lyricmode {
   <<
    \new ChoirStaff <<
     \new Staff = women <<
-      \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
-      \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
+      \new Voice = "sopranos" { \voiceOne << \sopMusic >> }
+      \new Voice = "altos" { \voiceTwo << \altoMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"women" } \lyricsto "sopranos" \sopWords
     \new Lyrics = "altosVI"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsVI
@@ -149,8 +154,8 @@ bassWords = \lyricmode {
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
-      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
+      \new Voice = "tenors" { \voiceOne << \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \bassMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men" \override VerticalAxisGroup #'nonstaff-relatedstaff-spacing = #'((basic-distance . 1)) } \lyricsto "basses" \bassWords

@@ -23,13 +23,14 @@
 global= {
   \preamble
   \time 3/4
-  \key b \minor
+  \key d \major
   \set Timing.beamExceptions = #'()
   \set Timing.baseMoment = #(ly:make-moment 1/4)
 }
 
 sop = \context Voice = "sop" \relative c'' {
   \voiceOne
+  \global
   b4. b8 a b | fis4 fis2 | b4. d8 cis b | fis2. |
   d'4 d d | \break b b2 | a8 a b4 gis | fis2. |
 
@@ -48,6 +49,7 @@ sop = \context Voice = "sop" \relative c'' {
 
 alto= \context Voice = "alto" \relative c' {
   \voiceTwo
+  \global
   fis4 fis e8 d | cis4 cis2 | d4 fis e8 d | d4( cis2) |
   fis4 fis8( e) a4 | a2 g4 | fis8 fis fis4 e8( d) | cis2. |
 
@@ -66,6 +68,7 @@ alto= \context Voice = "alto" \relative c' {
 
 tenor = \context Voice = "tenor" \relative c' {
   \voiceOne
+  \global
   d4 d cis8 b | b4 ais2 | b4 fis g8 g | b4( ais2) |
   a?4 a d | d2 e4 | cis8 cis d4 b | b( ais4.) fis8 |
 
@@ -85,6 +88,7 @@ tenor = \context Voice = "tenor" \relative c' {
 
 bass = \context Voice = "bass" \relative c' {
   \voiceTwo
+  \global
   b4 d, e8 e | fis4 fis2 | b4 d, e8 e | fis2. |
   d4 a' fis | g2 e4 | fis8 fis d4 e | fis2. |
 
@@ -151,7 +155,6 @@ wordsBottom = \lyricmode {
   \context ChoirStaff <<
     \unset ChoirStaff.melismaBusyProperties
     \context Staff ="upper"  { \clef "G" <<
-      \global
       \sop
       \alto
     >>}
@@ -160,7 +163,6 @@ wordsBottom = \lyricmode {
       \wordsTop }
 
     \context Staff = "lower"  { \clef "F"<<
-      \global
       \tenor
       \bass
     >>}

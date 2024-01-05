@@ -16,7 +16,7 @@
 global = {
   \preamble
   \time 6/8
-  \key e \minor
+  \key g \major
   \partial 8
 }
 
@@ -51,6 +51,7 @@ verseIII= \lyricmode {
 
 sop = \context Voice = "sop" {
   \voiceOne
+  \global
   \relative c' {
   e8 |
   g4 a8 b8.( cis16) b8
@@ -74,6 +75,7 @@ sop = \context Voice = "sop" {
 
 alto = \context Voice = "alto" {
   \voiceTwo
+  \global
   \relative c' {
   e8 |
   e4 d8 d4 g8
@@ -97,6 +99,7 @@ alto = \context Voice = "alto" {
 
 tenor = \context Voice = "tenor" {
   \voiceOne
+  \global
   \relative c' {
   g8 |
   b4 a8 g4 b8
@@ -119,6 +122,7 @@ tenor = \context Voice = "tenor" {
 
 bass = \context Voice = "bass" {
   \voiceTwo
+  \global
   \relative c {
   e8 |
   e4 fis8 g4 g8
@@ -145,7 +149,6 @@ bass = \context Voice = "bass" {
   \context ChoirStaff <<
     \unset ChoirStaff.melismaBusyProperties
     \context Staff ="upper"  { \clef "G" <<
-      \global
       \sop
       \alto
     >>}
@@ -160,7 +163,6 @@ bass = \context Voice = "bass" {
       \set stanza = "3."
       \verseIII }
     \context Staff = "lower"  { \clef "F"<<
-      \global
       \tenor
       \bass
     >>}

@@ -8,11 +8,13 @@
 }
 
 global = {
+  \preamble
   \key g \major
   \time 3/8
 }
 
 sopMusic = \relative c' {
+  \global
   b'4 a8 g4 e8 |
   fis8 g fis |
 
@@ -40,6 +42,7 @@ sopWords = \lyricmode {
 }
 
 altoMusic = \relative c'' {
+  \global
   g4 fis8 e4 e8 dis8 dis dis |
 
   \slurDotted e4 s8 | g4 fis8 e4 e8 | dis8( e) dis |
@@ -111,6 +114,7 @@ altoWordsV = \lyricmode {
 }
 
 tenorMusic = \relative c' {
+  \global
   b4 b8 | b4 g8 | a8 b a |
 
   \slurDotted g4 s8 | b4 b8 | b4 g8 | a8( b) a |
@@ -132,6 +136,7 @@ tenorWords = \lyricmode {
 }
 
 bassMusic = \relative c {
+  \global
   e4 e8 e4 e8 | b b b |
 
   \slurDotted e4 d8\rest | e4 e8 e4 e8 | b( b) b |
@@ -156,8 +161,8 @@ bassWords = \lyricmode {
   <<
    \new ChoirStaff <<
     \new Staff = women <<
-      \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
-      \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
+      \new Voice = "sopranos" { \voiceOne << \sopMusic >> }
+      \new Voice = "altos" { \voiceTwo << \altoMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"women" } \lyricsto "sopranos" \sopWords
     \new Lyrics = "altosV"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWordsV
@@ -167,8 +172,8 @@ bassWords = \lyricmode {
     \new Lyrics = "altos"  \with { alignBelowContext = #"women" } \lyricsto "sopranos" \altoWords
    \new Staff = men <<
       \clef bass
-      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
+      \new Voice = "tenors" { \voiceOne << \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \bassMusic >> }
     >>
     \new Lyrics \with { alignAboveContext = #"men"  } \lyricsto "tenors" \tenorWords
     \new Lyrics \with { alignBelowContext = #"men"  } \lyricsto "basses" \bassWords
