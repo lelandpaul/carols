@@ -2,6 +2,7 @@
   tagline = ""
   copyright = ""
 }
+
 \paper {
   ragged-last-bottom = ##t
   #(set-paper-size "half letter")
