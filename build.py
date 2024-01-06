@@ -154,7 +154,7 @@ class Document(pylatex.Document):
         self.preamble.append(Package('titlesec'))
         self.preamble.append(Package('pdfpages'))
         self.preamble.append(Package('makeidx'))
-        self.preamble.append(Package('hyperref'))
+        self.preamble.append(Package('hyperref', options=['hidelinks']))
         self.preamble.append(Package('graphicx'))
         self.preamble.append(Package('afterpage'))
 
