@@ -3,7 +3,7 @@ import os.path
 import re
 import subprocess
 
-from PyPDF2 import PdfWriter, PdfReader, PageObject, Transformation
+from pypdf import PdfWriter, PdfReader, PageObject, Transformation
 
 class LilypondException(Exception):
     pass
@@ -185,21 +185,17 @@ def duplex_pages(p1, p2, orig_width=0, orig_height=0):
     new_width, new_height = SCALE_FACTOR * orig_width, SCALE_FACTOR * orig_height
 
     # Merge them into the target page
-    p1.add_transformation(
-            Transformation().translate(
-                (orig_height/2 - new_width)/2,
-                (orig_width - new_height)/2
-            )
-        )
-    target.merge_page(p1)
+    target.merge_translated_page(
+        p1,
+        (orig_height/2 - new_width)/2,
+        (orig_width - new_height)/2
+    )
 
-    p2.add_transformation(
-            Transformation().translate(
-                orig_height/2 + (orig_height/2 - new_width)/2, 
-                (orig_width - new_height)/2
-            )
-        )
-    target.merge_page(p2)
+    target.merge_translated_page(
+        p2,
+        orig_height/2 + (orig_height/2 - new_width)/2, 
+        (orig_width - new_height)/2
+    )
 
     return target
 
