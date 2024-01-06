@@ -146,16 +146,16 @@ class Document(pylatex.Document):
             *args, **kwargs)
 
     @classmethod
-    def make_carol_book(cls, src_dir: str, dest_dir: str, force_build=False, silent=False):
+    def make_carol_book(cls, src_dir: str, dest_dir: str, force_build=False, silent=False, shapes=1):
         doc = cls(src_dir, dest_dir)
 
-        doc.set_up()
+        doc.set_up(shapes)
         doc.populate(force_build=force_build, silent=silent)
         doc.end_matter()
 
         return doc
 
-    def set_up(self):
+    def set_up(self, shapes=1):
         """Add packages, set preliminary settings for this doc."""
         # Add packages
         self.preamble.append(NoEscape(r'\usepackage[noprint,1to1]{booklet}'))
@@ -223,7 +223,16 @@ class Document(pylatex.Document):
         self.preamble.append(NoEscape(r'\renewcommand{\thesection}{\arabic{section}}'))
 
         # Title Info
-        self.preamble.append(Command('title', 'Christmas Carols'))
+        match shapes:
+            case 1: 
+                shapeSubtitle = "round notes"
+            case 4:
+                shapeSubtitle = "4 shapes"
+            case 7:
+                shapeSubtitle = "7 shapes"
+            case _:
+                shapeSubtitle = "catastrophe"
+        self.preamble.append(Command('title', NoEscape(r'Christmas Carols\\\large ' + f'in {shapeSubtitle}')))
         self.preamble.append(Command('author', 'compiled by Bryn & Leland Reimer'))
         self.preamble.append(Command('date', NoEscape(r'\today')))
 
@@ -292,7 +301,7 @@ if __name__ == '__main__':
     setShapes(args.shapes)
 
     carol_book = Document.make_carol_book(LY_DIR, BUILD_DIR,
-        force_build=args.force_build, silent=args.silent)
+        force_build=args.force_build, silent=args.silent, shapes=args.shapes)
 
     # NOTE: by default, pyLaTeX will compile the doc multiple times if needed to
     # make sure ToC is up to date.
