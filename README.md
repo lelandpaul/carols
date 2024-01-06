@@ -1,19 +1,28 @@
-# A Carefully Curated and Compiled Collection of Christmas Carols
+# A Carefully Curated and Compiled Collection of Christmas Carols (optionally in shapes)
 
 Here's the problem with existing books of Christmas carols:
 
-- They don't have all the carols I like.
-- They take up space with carols I don't like.
+- They don't have all the carols we like.
+- They take up space with carols we don't like.
 - They pick bad arrangements.
 - They pick bad lyrics.
 - It's expensive to buy enough copies to have a good caroling party.
+- They're usually in round notes.
 
-This is a book of my favorite four-part Christmas carols, using Ben Kuhn's [`carols` project](https://github.com/benkuhn/carols) as a jumping-off point. If you see stuff you like, or gaps that demand to be filled, feel free to fork this repo, make PRs, etc.!
+This is a book of some of our favorite four-part Christmas carols, using Maia McCormick's [`carols` project](https://github.com/maiamcc/carols) as a jumping-off point. If you see stuff you like, or gaps that demand to be filled, feel free to fork this repo, make PRs, etc.!
+
+The major addition of this fork is versions of the packet in 4 and 7 shapes, _a la_ the Sacred Harp and the Christian Harmony respectively.
 
 ### Just want the PDFs?
 This repo also contains the latest generated versions of the carol book:
-* [Full-Size](/carols.pdf) (with links in the pdf, good for singing off a tablet)
-* [Booklet](/carols-booklet.pdf) (for printing and folding into a booklet)
+* **Full-Size** (with links in the pdf, good for singing off a tablet)
+    - [round notes](/carols-print-round.pdf)
+    - [four-shape](/carols-print-4.pdf)
+    - [seven-shape](/carols-print-7.pdf)
+* **Booklet** (for printing and folding into a booklet)
+    - [round notes](/carols-booklet-round.pdf)
+    - [four-shape](/carols-booklet-4.pdf)
+    - [seven-shape](/carols-booklet-7.pdf)
 
 ## Project structure
 

@@ -61,6 +61,14 @@ def argument_parser():
         help='supress lilypond and LaTeX output'
     )
 
+    parser.add_argument(
+        '--shapes',
+        type=int,
+        default=0,
+        help='Whether to use shaped notes. 1 = round notes, 4 = Sacred Harp notes, 7 = Christian '
+             'Harmony notes.'
+   )
+
     return parser
 
 
@@ -216,7 +224,7 @@ class Document(pylatex.Document):
 
         # Title Info
         self.preamble.append(Command('title', 'Christmas Carols'))
-        self.preamble.append(Command('author', 'compiled by Maia McCormick'))
+        self.preamble.append(Command('author', 'compiled by Bryn & Leland Reimer'))
         self.preamble.append(Command('date', NoEscape(r'\today')))
 
         # Ignore page numbers until we get to the actual body
@@ -263,12 +271,25 @@ class Document(pylatex.Document):
     def end_matter(self):
         self.append(NoEscape(r'\clearpage'))
 
+def setShapes(shapes=1):
+    match shapes:
+        case 1:
+            shapeString = ""
+        case 4:
+            shapeString = r"\\sacredHarpHeads"
+        case 7:
+            shapeString = r"\\aikenHeads"
+        case _:
+            raise ValueError(f"Invalid number of shapes: {shapes}")
+    os.system(f"sed -i '' 's/^.*%noteShapes/  {shapeString}%noteShapes/g' carols/header.ly")
 
 if __name__ == '__main__':
     parser = argument_parser()
     args = parser.parse_args()
 
     utils.ensure_build_dir()
+
+    setShapes(args.shapes)
 
     carol_book = Document.make_carol_book(LY_DIR, BUILD_DIR,
         force_build=args.force_build, silent=args.silent)
@@ -288,6 +309,8 @@ if __name__ == '__main__':
         booklet_outfile_base = '{}-booklet'.format(args.output_file)
         utils.make_booklet(output_file, booklet_outfile_base)
         print('Booklet version successfully written to {}.pdf'.format(booklet_outfile_base))
+
+    setShapes(1)
 
 
 
